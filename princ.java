@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class princ {
    public static int opcao = 9;
-   public static int user = 1;
+   public static String user = "admin";
    public static int pass = 123;
    public static Scanner scan = new Scanner(System.in);
 
@@ -20,14 +20,14 @@ public class princ {
           switch(opcao){
           
               case 1:
-                  //roda o menu  de ususário
+                  //roda o menu de usuário
                       break;
               case 2:
-                  int usuario = 0;
+                  String usuario = null;
                   int senha = 0;
                   System.out.print("Insira o Usuario:");
-                  usuario = scan.nextInt();
-                  if (usuario == user)
+                  usuario = scan.next();
+                  if (usuario.equals(user) )
                   {
                       System.out.print("Digite a Senha:");
                       senha = scan.nextInt();
