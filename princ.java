@@ -1,14 +1,14 @@
-package projetoVoos;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class princ {
-    private static int opcao = 9;
-    private static String user = "admin";
-    private static int pass = 123;
-    private static Scanner scan = new Scanner(System.in);   
+public class Princ {
+    public static int opcao = 9;
+    public static String user = "admin";
+    public static int pass = 123;
+    public static Scanner scan = new Scanner(System.in);   
+
 
     public static void main(String[] args) {
         do {
@@ -21,7 +21,6 @@ public class princ {
           
           switch(opcao){          
             case 1: //Roda o menu de usuário
-                InfoVoos();
                 System.out.println(InfoVoos());
                     break;
 
@@ -59,7 +58,6 @@ public class princ {
         return 0;
     }
 
-    //Subprograma 
     public static ArrayList<ArrayList<Object>> InfoVoos() { // posição : 0 = número do avião / 1 = origem / 2 = destino / 3 horário de partida / 4 = horário de chegada / 5 = quantidade máx de passageiros
 
         ArrayList<Object> av1 = new ArrayList<>(Arrays.asList(2904, "São Paulo", "Espírito Santo", "13:00", "17:00", 100));
