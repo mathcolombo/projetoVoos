@@ -7,7 +7,7 @@ public class ValidacaoUser {
     public static int pass = 123;
 
 
-    public static int ValidacaoAdmin() {
+    public static boolean ValidacaoAdmin() {
         String usuario = "";
         int senha = 0;
 
@@ -20,7 +20,7 @@ public class ValidacaoUser {
 
             if(senha == pass) {
                 System.out.println("Você entrou");
-                return 2;
+                return true;
 
             } else {
                 System.err.print("Senha incorreta");
@@ -28,6 +28,6 @@ public class ValidacaoUser {
             }
         } else {System.err.println("Admin não encontrado");}
 
-        return 0;
+        return false;
     }
 }

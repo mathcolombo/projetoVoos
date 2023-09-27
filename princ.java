@@ -19,12 +19,16 @@ public class Princ {
 
             switch(opcao){          
                 case 1: //Roda o menu de usuário
-                    System.out.println(exibir.InfoVoos());
+                    System.out.println("Usuário -> CLIENTE");
                     break;
 
                 case 2: //Roda o menu admin - caso passe na validação 
-                    validar.ValidacaoAdmin();
-                    break;         
+                    Boolean x = validar.ValidacaoAdmin();
+                    
+                    if(x = true) {
+                        System.out.println("Usuário -> ADMINISTRADOR");
+
+                    } else {break;}
             }
             
         } while(opcao != 0);
