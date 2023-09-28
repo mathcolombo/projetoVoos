@@ -18,7 +18,7 @@ public class MenuUsuarioComum {
             System.out.println("-------------Menu-------------");
             System.out.println("1 - Exibir Informações de Voo");
             System.out.println("2 - Realizar reserva");
-            System.out.println("3 - Realizar checkin");
+            System.out.println("3 - Realizar checking");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
