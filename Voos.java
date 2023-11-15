@@ -12,8 +12,8 @@ public class Voos {
         voos.add(av1);
         voos.add(av2);
 
-        for(int c=0 ; c<voos.size() ; c++) {
-            System.out.println(voos.get(c));
+        for(Object item : voos) {
+            System.out.println(item);
         }
 
         return voos;
