@@ -24,22 +24,6 @@ public class princ {
             switch(opcao){          
                 case 1: //Roda o menu de usuário
 
-                    System.out.println("Inserir informações do usuário");
-                    System.out.println("================================================");
-                    System.out.println("Digite o nome do passageiro:");
-                    String nome = scan.next();
-                    System.out.println("================================================");
-                    System.out.println("Digite a idade do passageiro:");
-                    int idade = scan.nextInt();
-                    System.out.println("================================================");
-                    System.out.println("Digite o CPF do passageiro:");
-                    String cpf = scan.next();
-                    System.out.println("================================================");
-                    System.out.println("Digite o email do passageiro:");
-                    String email = scan.next();
-                    System.out.println("================================================");
-                    Passageiro passageiro = new Passageiro(nome, idade, cpf, email);
-
                     MenuUsuarioComum menuUsuario = new MenuUsuarioComum(scan);
                     menuUsuario.exibirMenu();
 
