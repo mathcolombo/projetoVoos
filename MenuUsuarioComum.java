@@ -22,8 +22,6 @@ public class MenuUsuarioComum {
             switch (opcao) {
                 case 1:
 
-                    System.out.println("---------------------------------------------------");
-                    System.out.println();
                     System.out.println(" Da esquerda para direita a ordem é: número do avião, origem ,destino ,horário de partida , horário de chegada, quantidade máx de passageiros");
                     System.out.println();                
                     System.out.println();

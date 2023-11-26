@@ -15,16 +15,19 @@ public class princ {
 
         do {
 
+            System.out.println("---------------------------------------------------");
             System.out.println("Selecione com que tipo de usuário entrar");
             System.out.println("1 - Cliente");
             System.out.println("2 - Administrador");
             System.out.println("0 - Encerrar Programa");
+            System.out.println("---------------------------------------------------");
+            System.out.print("");
             opcao = scan.nextInt();
 
             switch(opcao){          
                 case 1: //Roda o menu de usuário
 
-                    MenuUsuarioComum menuUsuario = new MenuUsuarioComum(scan);
+                    MenuUsuarioComum menuUsuario = new MenuUsuarioComum();
                     menuUsuario.exibirMenu();
 
                     break;
