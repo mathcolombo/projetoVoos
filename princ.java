@@ -1,8 +1,6 @@
 
 import java.util.Scanner;
 
-
-
 public class princ {
 
     public static int opcao = 9;

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MenuUsuarioComum {
 
     private static Scanner scan = new Scanner(System.in);
-    public static Voos exibirInfoVoo = new Voos();
+    public static Voos voos = new Voos();
     
 
     public void exibirMenu() {
@@ -20,19 +20,19 @@ public class MenuUsuarioComum {
             opcao = scan.nextInt();
 
             switch (opcao) {
-                case 1:
+                case 1: //Informações dos voos
 
-                    System.out.println(" Da esquerda para direita a ordem é: número do avião, origem ,destino ,horário de partida , horário de chegada, quantidade máx de passageiros");
-                    System.out.println();                
-                    System.out.println();
-                    ArrayList<ArrayList<Object>> resultadoExibir = exibirInfoVoo.InfoVoos();
+                    voos.InfoVoos();
                     System.out.println();
                     System.out.println("---------------------------------------------------");
 
                     break;
-                case 2:
+                case 2: // Reserva
                     
-                    System.out.println("Para realizar uma reserva é necessário realizar o cadastro!!");
+                    System.out.println("Voos disponíveis: ");
+
+
+                    /*System.out.println("Para realizar uma reserva é necessário realizar o cadastro!!");
                     System.out.println("Inserir informações do usuário");
                     System.out.println("================================================");
                     System.out.println("Digite o nome do passageiro:");
@@ -47,11 +47,13 @@ public class MenuUsuarioComum {
                     System.out.println("Digite o email do passageiro:");
                     String email = scan.next();
                     System.out.println("================================================");
-                    Passageiro passageiro = new Passageiro(nome, idade, cpf, email);
+                    Passageiro passageiro = new Passageiro(nome, idade, cpf, email);*/
+
+                    voos.ReservarVoo();
 
 
                     break;
-                case 3:
+                case 3: //Check-in
 
                     break;
                 case 0:
