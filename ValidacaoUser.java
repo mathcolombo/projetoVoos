@@ -15,8 +15,9 @@ public class ValidacaoUser {
         usuario = scan.next();
 
         if(usuario.equals(user)) {
-                System.out.print("Digite a Senha:");
-                senha = scan.nextInt();
+
+            System.out.print("Digite a Senha:");
+            senha = scan.nextInt();
 
             if(senha == pass) {
                 System.out.println("Você entrou");
@@ -24,8 +25,8 @@ public class ValidacaoUser {
 
             } else {
                 System.err.print("Senha incorreta");
-
             }
+            
         } else {System.err.println("Admin não encontrado");}
 
         return false;

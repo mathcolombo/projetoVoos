@@ -7,6 +7,7 @@ public class princ {
     public static Scanner scan = new Scanner(System.in);   
     public static Voos exibirInfoVoo = new Voos();
     public static ValidacaoUser validar = new ValidacaoUser();
+    public static MenuUsuario menuUsuario = new MenuUsuario();
     
 
     public static void main(String[] args) {
@@ -25,18 +26,21 @@ public class princ {
             switch(opcao){          
                 case 1: //Roda o menu de usuário
 
-                    MenuUsuarioComum menuUsuario = new MenuUsuarioComum();
-                    menuUsuario.exibirMenu();
+
+                    menuUsuario.exibirMenuComum();
 
                     break;
 
                 case 2: //Roda o menu admin - caso passe na validação 
                     Boolean x = validar.validacaoAdmin();
                     
-                    if(x = true) {
+                    if(x == true) {
                         System.out.println("Usuário -> ADMINISTRADOR");
+                        menuUsuario.exibirMenuAdmin();
 
                     } else {break;}
+
+
             }
             
         } while(opcao != 0);
