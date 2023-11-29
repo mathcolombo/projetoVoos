@@ -31,7 +31,7 @@ public class princ {
                     break;
 
                 case 2: //Roda o menu admin - caso passe na validação 
-                    Boolean x = validar.ValidacaoAdmin();
+                    Boolean x = validar.validacaoAdmin();
                     
                     if(x = true) {
                         System.out.println("Usuário -> ADMINISTRADOR");

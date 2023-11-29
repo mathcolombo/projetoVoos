@@ -7,7 +7,7 @@ public class ValidacaoUser {
     public static int pass = 123;
 
 
-    public static boolean ValidacaoAdmin() {
+    public static boolean validacaoAdmin() {
         String usuario = "";
         int senha = 0;
 

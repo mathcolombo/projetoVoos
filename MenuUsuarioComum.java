@@ -22,7 +22,7 @@ public class MenuUsuarioComum {
             switch (opcao) {
                 case 1: //Informações dos voos
 
-                    voos.InfoVoos();
+                    voos.infoVoos();
                     System.out.println();
                     System.out.println("---------------------------------------------------");
 
