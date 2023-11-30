@@ -5,6 +5,7 @@ public class MenuUsuario {
 
     private static Scanner scan = new Scanner(System.in);
     public static Voos voos = new Voos();
+    public static ReservasPendentes reservas = new ReservasPendentes();
     
 
     public void exibirMenuComum() {
@@ -95,7 +96,9 @@ public class MenuUsuario {
                     System.out.println("---------------------------------------------------");
 
                     break;
-                case 2: // Reservas Pendentes 
+                case 2: 
+
+                reservas.FilaDasReservasPendentes();
 
 
                     break;
