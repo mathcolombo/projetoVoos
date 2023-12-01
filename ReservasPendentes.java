@@ -18,9 +18,11 @@ public class ReservasPendentes {
     public Void FilaReservasCpf(String cpfTemp) { 
 
         reservasCpf.add(cpfTemp);
-        for(int c = 0 ; c < reservasCpf.size() ; c++) {
-            System.out.println("Reserva " + c + " -> " + ((LinkedList<String>) reservasCpf).get(c));
-        }
+        
+        System.out.println("");
+        System.out.println("Reserva solicitada com sucesso!" );
+        System.out.println("");
+        
 
         return null;
     }

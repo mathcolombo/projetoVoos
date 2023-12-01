@@ -75,6 +75,7 @@ public class Voos {
             System.out.println("[" + c + "]" + " - Voo: " + voos.get(c).get(0) + " - Origem: " + voos.get(c).get(1) + " - Destino: " + voos.get(c).get(2));
         }
 
+        System.out.println("");
         System.out.print("Deseja reservar qual Voo?");
         int opcao = scan.nextInt();
         int quantReservasTemp = (int)contReservas.get(opcao); //Inicializando a variável que auxiliará a saber a quantidade de reservas ja feita

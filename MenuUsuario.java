@@ -55,7 +55,6 @@ public class MenuUsuario {
             System.out.println("-------------Menu-------------");
             System.out.println("1 - Exibir Informações de Voo");
             System.out.println("2 - Autorizar Reserva");
-            System.out.println("3 - Realizar checking");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -68,11 +67,9 @@ public class MenuUsuario {
                     System.out.println();
                     System.out.println("---------------------------------------------------");
                     break;
-                case 2: 
+                case 2: // liberacao de reservas
                     reservas.liberarReservas();;
                     break;
-
-                case 3: //Check-in
 
             }
         } while (opcao != 0);
