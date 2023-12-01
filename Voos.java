@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -7,12 +8,16 @@ public class Voos {
 
     public static Scanner scan = new Scanner(System.in);
 
+    public static ReservasPendentes reservas = new ReservasPendentes();
+
+    public static Passageiro passageiro = new Passageiro(null, 0, null, null);
+
     public static ArrayList<Integer> contReservas = new ArrayList<>();
 
     public static ArrayList<ArrayList<Object>> voos = new ArrayList<>();
-    public static ArrayList<Object> av1 = new ArrayList<>(Arrays.asList("1000", "São Paulo", "Espírito Santo", "13:00", "17:00", 100));
-    public static ArrayList<Object> av2 = new ArrayList<>(Arrays.asList("2000", "Madri", "Cariacica", "13:00", "17:00", 1));
-    public static ArrayList<Object> av3 = new ArrayList<>(Arrays.asList("3000", "Rio de Janeiro", "Santa Catarina", "13:00", "17:00", 100));
+    public static ArrayList<Object> av1 = new ArrayList<>(Arrays.asList("1000", "São Paulo", "Espírito Santo", "13:00", "17:00", 3));
+    public static ArrayList<Object> av2 = new ArrayList<>(Arrays.asList("2000", "Madri", "Cariacica", "13:00", "17:00", 3));
+    public static ArrayList<Object> av3 = new ArrayList<>(Arrays.asList("3000", "Rio de Janeiro", "Santa Catarina", "13:00", "17:00", 3));
 
     public Voos() {
 
@@ -25,7 +30,6 @@ public class Voos {
                 contReservas.add(0);
             }
         }
-
     }
 
     public static ArrayList<ArrayList<Object>> infoVoos() { // posição : 0 = número do avião / 1 = origem / 2 = destino / 3 horário de partida / 4 = horário de chegada / 5 = quantidade máx de passageiros
@@ -44,6 +48,28 @@ public class Voos {
     //Método de reserva de voos
     public static String ReservarVoo() {
 
+        System.out.println("Realize o cadastro"); // informacoes dos passageiros
+        System.out.println("Inserir informações do usuário");
+        System.out.println("================================================");
+        System.out.println("Digite o nome do passageiro:");
+        String nome = scan.next();
+        System.out.println("================================================");
+        System.out.println("Digite a idade do passageiro:");
+        int idade = scan.nextInt();
+        System.out.println("================================================");
+        System.out.println("Digite o CPF do passageiro:");
+        String cpf = scan.next();
+        System.out.println("================================================");
+        System.out.println("Digite o email do passageiro:");
+        String email = scan.next();
+        System.out.println("================================================");
+        System.out.println("");
+        System.out.println("Voos disponíveis: ");
+        System.out.println("");
+
+        Passageiro passageiro = new Passageiro(nome, idade, cpf, email);
+
+
         //Loop para apresentar os voos de forma formatada
         for(int c = 0 ; c < voos.size() ; c++) {
             System.out.println("[" + c + "]" + " - Voo: " + voos.get(c).get(0) + " - Origem: " + voos.get(c).get(1) + " - Destino: " + voos.get(c).get(2));
@@ -59,12 +85,13 @@ public class Voos {
 
         } else {
 
+            String cpfTemp = passageiro.getCpf();
+            reservas.FilaReservasCpf(cpfTemp); // Adiciona o cpf do passageiro na fila de reservas
+
             quantReservasTemp = (int)contReservas.get(opcao) + 1;
             contReservas.set(opcao, quantReservasTemp++); //Adiciona mais uma reserva no voo escolhido
         }
 
-        System.out.println(contReservas);
         return "a";
     }
-
 }

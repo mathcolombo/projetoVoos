@@ -34,27 +34,6 @@ public class MenuUsuario {
 
                     break;
                 case 2: // Reserva
-                    
-                    System.out.println("Primeiro Realize o cadastro"); // informacoes dos passageiros
-                    System.out.println("Inserir informações do usuário");
-                    System.out.println("================================================");
-                    System.out.println("Digite o nome do passageiro:");
-                    String nome = scan.next();
-                    System.out.println("================================================");
-                    System.out.println("Digite a idade do passageiro:");
-                    int idade = scan.nextInt();
-                    System.out.println("================================================");
-                    System.out.println("Digite o CPF do passageiro:");
-                    String cpf = scan.next();
-                    System.out.println("================================================");
-                    System.out.println("Digite o email do passageiro:");
-                    String email = scan.next();
-                    System.out.println("================================================");
-                    Passageiro passageiro = new Passageiro(nome, idade, cpf, email);
-
-                    System.out.println("");
-                    System.out.println("Voos disponíveis: ");
-                    System.out.println("");
 
                     voos.ReservarVoo();
 
@@ -73,15 +52,11 @@ public class MenuUsuario {
     
      public void exibirMenuAdmin() {
         int opcao;
+
         do {
-
-            
-
-            
-
             System.out.println("-------------Menu-------------");
             System.out.println("1 - Exibir Informações de Voo");
-            System.out.println("2 - Autorizar Rezerva");
+            System.out.println("2 - Autorizar Reserva");
             System.out.println("3 - Realizar checking");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
@@ -94,14 +69,11 @@ public class MenuUsuario {
                     voos.infoVoos();
                     System.out.println();
                     System.out.println("---------------------------------------------------");
-
                     break;
                 case 2: 
-
-                reservas.FilaDasReservasPendentes();
-
-
+                    reservas.liberarReservas();;
                     break;
+
                 case 3: //Check-in
 
             }
