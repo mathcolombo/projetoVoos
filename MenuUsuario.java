@@ -10,12 +10,9 @@ public class MenuUsuario {
 
     public void exibirMenuComum() {
         int opcao;
+
         do {
-
             
-
-            
-
             System.out.println("-------------Menu-------------");
             System.out.println("1 - Exibir Informações de Voo");
             System.out.println("2 - Realizar reserva");
@@ -34,11 +31,11 @@ public class MenuUsuario {
 
                     break;
                 case 2: // Reserva
-
                     voos.ReservarVoo();
 
                     break;
                 case 3: //Check-in
+                    reservas.checkin();
 
                     break;
                 case 0:
@@ -47,6 +44,7 @@ public class MenuUsuario {
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
+            
         } while (opcao != 0);
     }
     

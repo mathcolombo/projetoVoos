@@ -35,10 +35,10 @@ public class Voos {
     public static ArrayList<ArrayList<Object>> infoVoos() { // posição : 0 = número do avião / 1 = origem / 2 = destino / 3 horário de partida / 4 = horário de chegada / 5 = quantidade máx de passageiros
 
         for(int c = 0 ; c < voos.size() ; c++) {
-            System.out.println("");
+            System.out.println("\nVoo " + c);
 
             for(int x = 0 ; x < voos.get(c).size() ; x++) {
-                System.out.print(voos.get(c).get(x) + ", ");
+                System.out.print(voos.get(c).get(x) + " - ");
             }
         }
 
