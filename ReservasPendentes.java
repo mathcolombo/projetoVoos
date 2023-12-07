@@ -15,9 +15,10 @@ public class ReservasPendentes {
 
     public static Stack<String> checkinsFeitos = new Stack<>(); 
 
+    //Método para solicitar a reserva
     public Void FilaReservasCpf(String cpfTemp) { 
 
-        reservasCpf.add(cpfTemp);
+        reservasCpf.add(cpfTemp); //Adiciona o cpf da lista temporária a lista definitiva
         
         System.out.println("");
         System.out.println("Reserva solicitada com sucesso!" );
@@ -27,9 +28,10 @@ public class ReservasPendentes {
         return null;
     }
 
+    //Método para a liberação de reservas feitas
     public void liberarReservas() {
 
-        System.out.println("Deseja liberar a reserva do CPF - " + ((LinkedList<String>) reservasCpf).get(0));
+        System.out.println("Deseja liberar a reserva do CPF - " + ((LinkedList<String>) reservasCpf).get(0)); //Casting de conversão para uma lista encadeada do tipo String
         System.out.println("[ 1 ] SIM - [ !1 ] NÃO");
         int opc = scan.nextInt();
 
@@ -47,12 +49,16 @@ public class ReservasPendentes {
 
     }
 
+    //Método do checkin
     public void checkin() {
+
         System.out.print("Digite o cpf usado no momento das reservas: ");
         String cpfDigitado = scan.next();
 
+        //Loop para varrer a lista de cpfs que fizerem as reservas
         for(int c = 0 ; c <cpfsLiberados.size() ; c++) {
 
+            //Caso o cpf seja igual ao digitado pelo cliente, é feito o checkin
             if(cpfsLiberados.get(c).equals(cpfDigitado)) {
                 checkinsFeitos.push(cpfsLiberados.remove(c));
 

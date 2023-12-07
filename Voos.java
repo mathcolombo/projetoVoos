@@ -8,17 +8,18 @@ public class Voos {
 
     public static Scanner scan = new Scanner(System.in);
 
-    public static ReservasPendentes reservas = new ReservasPendentes();
+    public static ReservasPendentes reservas = new ReservasPendentes(); //Criação de um objeto da classe ReservasPendentes
 
-    public static Passageiro passageiro = new Passageiro(null, 0, null, null);
+    public static Passageiro passageiro = new Passageiro(null, 0, null, null); //Criação de um objeto da classe Passageiro
 
-    public static ArrayList<Integer> contReservas = new ArrayList<>();
+    public static ArrayList<Integer> contReservas = new ArrayList<>(); //Lista responsável por monitorar as quantidades de reservas feitas
 
     public static ArrayList<ArrayList<Object>> voos = new ArrayList<>();
     public static ArrayList<Object> av1 = new ArrayList<>(Arrays.asList("1000", "São Paulo", "Espírito Santo", "13:00", "17:00", 3));
     public static ArrayList<Object> av2 = new ArrayList<>(Arrays.asList("2000", "Madri", "Cariacica", "13:00", "17:00", 3));
     public static ArrayList<Object> av3 = new ArrayList<>(Arrays.asList("3000", "Rio de Janeiro", "Santa Catarina", "13:00", "17:00", 3));
 
+    //Construtor que adiciona os voos a lista e inicializa as quantidades de reservas conforme a quantidade de voos
     public Voos() {
 
         if(voos.size() == 0) {
@@ -48,7 +49,8 @@ public class Voos {
     //Método de reserva de voos
     public static String ReservarVoo() {
 
-        System.out.println("Realize o cadastro"); // informacoes dos passageiros
+        //Informações dos passageiros
+        System.out.println("Realize o cadastro"); 
         System.out.println("Inserir informações do usuário");
         System.out.println("================================================");
         System.out.println("Digite o nome do passageiro:");
@@ -78,18 +80,20 @@ public class Voos {
         System.out.println("");
         System.out.print("Deseja reservar qual Voo?");
         int opcao = scan.nextInt();
+
         int quantReservasTemp = (int)contReservas.get(opcao); //Inicializando a variável que auxiliará a saber a quantidade de reservas ja feita
 
-        //If que monitora se a quantidade de reservas do voo ja foi excedida, caso sim, não permite reservá-lo
+        //Condicional que monitora se a quantidade de reservas do voo ja foi excedida, caso sim, não permite reservá-lo
         if(quantReservasTemp >= (int)voos.get(opcao).get(5)) {
             System.out.println("Lamentamos mas o voo está lotado, favor escolher outro voo");
 
+        //Caso tenha assentos livres prosseguirá com o código
         } else {
 
-            String cpfTemp = passageiro.getCpf();
-            reservas.FilaReservasCpf(cpfTemp); // Adiciona o cpf do passageiro na fila de reservas
+            String cpfTemp = passageiro.getCpf(); //Variável que obtém o cpf do passageiro que está fazendo a reserva
+            reservas.FilaReservasCpf(cpfTemp); //Adiciona o cpf do passageiro na fila de reservas
 
-            quantReservasTemp = (int)contReservas.get(opcao) + 1;
+            quantReservasTemp = (int)contReservas.get(opcao) + 1; //Variável que obtém a quantidade de reservas ja feitas no voo escolhido
             contReservas.set(opcao, quantReservasTemp++); //Adiciona mais uma reserva no voo escolhido
         }
 
